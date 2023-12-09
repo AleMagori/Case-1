@@ -11,5 +11,6 @@
  git add file1 ou git add .
  6 - Realizar o commit das alteracoes
  git commit  -m "incluindo informacoes do passo a passo no readme"
- 7 - 
+ 7 - Para enviar as alterações no Github 
+ git push origin desafioNovaBranch
  
