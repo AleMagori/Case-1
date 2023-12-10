@@ -1,10 +1,4 @@
 # Case-1
-    
-Imagine que você está utilizando o Git para desenvolver uma nova feature em um projeto colaborativo. Qual seria o passo a passo detalhado para conduzir a execução dessa feature?
-
-# Passo a passo de como desenvolver a feature até a execução:
-# Case-1
-
 Imagine que você está utilizando o Git para desenvolver uma nova feature em um projeto colaborativo. Qual seria o passo a passo detalhado para conduzir a execução dessa feature?
 
 # Passo a passo de como desenvolver a feature até a execução:
