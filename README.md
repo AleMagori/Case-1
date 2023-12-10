@@ -43,7 +43,7 @@ Imagine que você está utilizando o Git para desenvolver uma nova feature em um
 
  14 - Durante esse tempo de revisão, provavelmente houve outros "Pull requests" aprovados e que já foram mesclados na branch principal. Isso pode causar conflitos com a branch que ainda não foi aprovada. Dessa forma, é recomendado que faça o comando abaixo:
      git pull origin main
- Com isso, terá as últimas alterações e, se houver algum tipo de conflito, o Git irá informar através das marcas "<<<<<<<" e ">>>>>>>". Essas marcas indicam onde estão as alterações conflitantes. Dessa forma, você terá que editar e realizar a alteração correta. Após resolver todos os conflitos, pode realizar o commit e em seguida realizar o push como descrito no passo 11 e 12.
+ Com isso, terá as últimas alterações e, se houver algum tipo de conflito, o Git irá informar através das marcas "<<<<<<<" e ">>>>>>>". Essas macas indicam onde estão as alterações conflitantes. Dessa forma, você terá que editar e realizar a alteração correta. Após resolver todos os conflitos, pode realizar o commit e em seguida realizar o push como descrito no passo 11 e 12.
 
  15 - Após o "Pull request" ser aprovado, pode ser mesclado com a branch principal (main ou master);
 
