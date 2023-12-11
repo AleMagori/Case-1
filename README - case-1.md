@@ -73,7 +73,13 @@ Imagine que você está utilizando o Git para desenvolver uma nova feature em um
     
 10 - **Criar Pull Request no Github:**
 
-    - Vá para o GitHub e crie um `Pull request` para mesclar as alterações no branch principal.
+    - Vá para o GitHub realize os comandos a seguir:
+
+     - No canto superior direito, clique no `Compare & pull request`.
+    
+    - Preencha as informações do titulo(opcional) e descrição (opcional).
+    
+    - Após o preenchimento, clique em `Create pull request` para mesclar as alterações no branch principal.
 
     - Suas alterações serão revisadas por outros colaboradores. Se tudo estiver correto, ocorrerá a aprovação. Caso contrário, podem ser solicitadas outras alterações ou discussões sobre a alteração realizada.
 
@@ -85,7 +91,8 @@ Imagine que você está utilizando o Git para desenvolver uma nova feature em um
 
 12 - **Merge da Branch Aprovada:**
 
-    - Após o "Pull request" ser aprovado, faça o merge com a branch principal.
+   - Vá para a seção `Pull Requests`, acesse a alteração, clique no botão `Merge pull request` e clique `Confirm merge`. Isso integrará as alterações na branch principal.
+
 
 13 - **Excluir Branch Local (Opcional):** 
     - Caso deseje, exclua a branch local.
