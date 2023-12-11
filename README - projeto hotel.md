@@ -2,23 +2,31 @@
 Realizado a criação do projeto de gerenciamento de funcionários de um hotel na linguagem C# com conexão ao MySQL.
 
 1 - **Criação do Banco de Dados:**
+
    - Utilizei o MySQL para criar o banco de dados.
 
 2 - **Tabelas e Inserção de Dados:**
+
    - Criei as tabelas de funcionários e departamentos e inseri informações no MySQL.
 
 3 - **Extensões necessárias no Visual Code:**
+
    - Verifiquei e instalei as extensões necessárias no Visual Code:
+
      - SQLtools (https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools).
+
      - SQLtools MySQL/MariaDB/TiDB (https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-mysql).
 
 4 - **Teste de conexão com MySQL e Visual Code:**
+
    - Como já tinha realizado a criação do banco de dados consegui realizar o teste no SQLtools e tive sucesso na conexão.
 
 5 - **Código C#** 
+
    - Realização do código em C#.
 
 6 - **Configuração do ambiente .NET Core SDK:**
+
    - Verifique se possui o .NET Core SDK instalado, caso não tenha acesse o site oficial e siga as instruções: https://dotnet.microsoft.com/download.
    
 7 - **Verificação do ambiente .NET Core SDK:**
