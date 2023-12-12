@@ -1,4 +1,5 @@
 using System;
+using System.Data;
 using MySql.Data.MySqlClient;
 
 class Program
@@ -13,37 +14,50 @@ class Program
       {
         connection.Open();
 
-        string query = "SELECT * FROM departamentos";
-        string query2 = "SELECT * FROM funcionarios";
 
-        using (MySqlCommand cmd = new MySqlCommand(query, connection))
+        string query3 = @"
+                SELECT 
+                    nome AS 'Nome do Funcionário',
+                    cargo_dep AS 'Cargo do Funcionário',
+                    salario AS 'Salário',
+                    SUM(qt_venda) AS 'Total de vendas dos ultimos 3 meses',
+                    ROUND(SUM(qt_venda) / 3, 2) AS 'Média de vendas dos ultimos 3 meses',
+                    ROUND(salario / (SUM(qt_venda) / 3), 2) AS 'Calculo do salario por venda'
+                FROM
+                    funcionarios
+                JOIN
+                    departamentos ON fk_id_dep = id_dep
+                JOIN
+                    venda ON funcionarios.id = venda.fk_id_fun
+                WHERE
+                    salario > 3000
+                GROUP BY
+                    nome, cargo_dep, salario;";
+
+        using MySqlCommand cmd = new MySqlCommand(query3, connection);
+        using MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+
+        DataSet dataSet = new DataSet();
+        adapter.Fill(dataSet, "Resultado");
+
+        DataTable dataTable = dataSet.Tables["Resultado"];
+
+        foreach (DataRow row in dataTable.Rows)
         {
-          using (MySqlDataReader reader = cmd.ExecuteReader())
-          {
-            while (reader.Read())
-            {
-              Console.WriteLine($"id_dep: {reader["id_dep"]}, cargo_dep: {reader["cargo_dep"]}");
-            }
-          }
+          Console.WriteLine($"Nome do Funcionário: {row["Nome do Funcionário"]}");
+          Console.WriteLine($"Cargo do Funcionário: {row["Cargo do Funcionário"]}");
+          Console.WriteLine($"Salário: {row["Salário"]}");
+          Console.WriteLine($"Total de vendas dos ultimos 3 meses: {row["Total de vendas dos ultimos 3 meses"]}");
+          Console.WriteLine($"Média de vendas dos ultimos 3 meses: {row["Média de vendas dos ultimos 3 meses"]}");
+          Console.WriteLine($"Calculo do salario por venda: {row["Calculo do salario por venda"]}");
+          Console.WriteLine();
         }
-
-        using (MySqlCommand cmd2 = new MySqlCommand(query2, connection))
-        {
-          using (MySqlDataReader reader2 = cmd2.ExecuteReader())
-          {
-            while (reader2.Read())
-            {
-              Console.WriteLine($"id: {reader2["id"]}, nome: {reader2["nome"]}, dt_Nascimento: {reader2["dt_Nascimento"]}, cargo: {reader2["cargo"]}, fK_Id_Dep: {reader2["fK_Id_Dep"]}, salario: {reader2["salario"]}");
-            }
-          }
-        }
-
-        Console.WriteLine("Dados exibidos com sucesso!");
       }
       catch (Exception ex)
       {
-        Console.WriteLine($"Erro ao conectar ao banco de dados: {ex.Message}");
+        Console.WriteLine($"Erro: {ex.Message}");
       }
     }
   }
+
 }
