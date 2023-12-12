@@ -1,6 +1,32 @@
 # Case-1
 Imagine que você está utilizando o Git para desenvolver uma nova feature em um projeto colaborativo. Qual seria o passo a passo detalhado para conduzir a execução dessa feature?
 
+# Case-Plus
+Foi requisitada a criação de uma tabela de vendas que estará vinculada à tabela de funcionários por meio do ID do funcionário.
+
+Dentro dessa tabela de vendas, é necessário incluir:
+
+  - ID do funcionário
+
+  - Mês da venda(Popular 3 meses de venda)
+
+  - Quantidade de vendas
+
+Além disso, é preciso desenvolver uma consulta que relacione essa nova tabela com as tabelas de funcionários e departamentos, fornecendo:
+
+ - Nome do funcionário
+
+ - Cargo do funcionário(buscando através da tabela departamentos)
+
+ - Salário
+ 
+ - Média de vendas dos últimos 3 meses
+
+ - Cálculo do salário do funcionário por venda(salário/média de vendas) em cima dos últimos 3 meses
+
+ - Trazer somente salários acima de R$3.000,00
+ ____________________________________________________________________________________________
+ 
 # Passo a passo de como desenvolver a feature até a execução:
 
 1 - **GitHub:** 
